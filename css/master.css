@@ -1,0 +1,156 @@
+/* master.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f5f5f5;
+  color: #1e1e1e;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  padding: 1rem;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 5rem;
+  color: inherit;
+}
+
+#pilihGaya {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  margin-bottom: 8rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+}
+
+#toggleTemp {
+  margin: 2rem auto;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 2px solid #3498db;
+  border-radius: 8px;
+  background-color: #f5f5f5;
+  color: #3498db;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#toggleTemp:hover {
+  background-color: #3498db;
+  color: #fff;
+}
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+}
+
+.kotak {
+  width: 160px;
+  padding: 1rem;
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  animation: fadeUp 0.8s ease both;
+  animation-delay: var(--delay, 0s);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: inherit;
+  max-width: 200px;
+}
+
+.kotak:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+}
+
+.kotak img {
+  width: 80px;
+  margin: 0.5rem 0;
+  transition: transform 0.3s ease;
+}
+
+.kotak img:hover {
+  transform: scale(1.1);
+}
+
+.kotak p {
+  font-size: 0.95rem;
+  margin: 0.25rem 0;
+  color: inherit;
+}
+
+#loader {
+  display: none;
+  margin: 2rem auto;
+  border: 5px solid #ccc;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+footer {
+  margin-top: 10rem;
+  font-size: 0.85rem;
+  color: inherit;
+  opacity: 0.7;
+}
+
+/* Weather color classes */
+.cuaca-clear      { background-color: #89e5a6; color: #000; }
+.cuaca-cloudy     { background-color: #aaa; color: #000; }
+.cuaca-rain       { background-color: #75bdf5; color: #000; }
+.cuaca-lightrain  { background-color: #c9d6ff; color: #000; }
+.cuaca-snow       { background-color: #f0f8ff; color: #000; }
+.cuaca-fog        { background-color: #bdc3c7; color: #000; }
+.cuaca-tsrain     { background-color: #586376; color: #fff; }
+.cuaca-windy      { background-color: #56ccf2; color: #000; }
+.cuaca-pcloudy    { background-color: #fbc2eb; color: #000; }
+.cuaca-mcloudy    { background-color: #d7dde8; color: #000; }
+.cuaca-default    { background-color: #764ba2; color: #fff; }
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  #pilihGaya {
+    max-width: 100%;
+  }
+
+  ul {
+    gap: 0.5rem;
+  }
+
+  .kotak {
+    max-width: 150px;
+  }
+}
